@@ -2,7 +2,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <div className="navbar-brand">
         <img src="./unsplash.png" alt="" className="nav-img" />
         <div className="brand-name">Pixdeck</div>
@@ -19,7 +19,7 @@ const Navbar = () => {
         <button className="add-photo-btn">Add a photo</button>
         <i className="eos-icons toggle-nav-icon">menu</i>
       </div>
-    </div>
+    </nav>
   );
 };
 

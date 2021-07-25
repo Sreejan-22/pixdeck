@@ -4,9 +4,34 @@
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: 300px;
   gap: 15px;
+  padding-bottom: 40px;
 }
 
 .grid-img {
   height: 100%;
   width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .image-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .image-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .image-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .image-container {
+    grid-auto-rows: 250px;
+  }
 }
