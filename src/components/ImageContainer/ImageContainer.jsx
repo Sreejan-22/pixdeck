@@ -1,15 +1,25 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./ImageContainer.css";
-import fetchImages from "../../api/api";
+import { fetchImages, searchImages } from "../../api/api";
 
-const ImageContainer = () => {
+const ImageContainer = ({ query }) => {
   const [images, setImages] = useState([]);
+  const didMount = useRef(false);
   useEffect(() => {
     fetchImages().then((res) => {
       setImages(res);
-      console.log(res);
     });
   }, []);
+
+  useEffect(() => {
+    if (didMount.current) {
+      searchImages(query).then((res) => {
+        setImages(res);
+      });
+    } else {
+      didMount.current = true;
+    }
+  }, [query]);
 
   return (
     <div className="image-container">
