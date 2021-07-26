@@ -1,16 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Chettan+2&display=swap");
+
+.navbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 6rem;
+  z-index: 99;
+  background-color: white;
+}
+
 .navbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 4rem;
-  z-index: 99;
+  /* height: 4rem; */
+  z-index: 100;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 64px;
   /* margin: 2rem; */
   margin-top: 1rem;
-  /* margin-left: 1rem; */
+  margin-left: 1rem;
   /* box-shadow: 0px 0px 10px gray; */
 }
 
@@ -33,16 +45,17 @@
 } */
 
 .nav-img {
-  left: 50px;
-  height: 25px;
-  width: 25px;
+  /* left: 50px; */
+  height: 30px;
+  width: 30px;
   margin-right: 0.7rem;
 }
 
 .brand-name {
-  left: 80px;
-  font-size: 20px;
+  /* left: 80px; */
+  font-size: 36px;
   font-weight: 800;
+  font-family: "Baloo Chettan 2", cursive;
 }
 
 .nav-search-wrapper {
@@ -128,10 +141,22 @@
   }
 } */
 
-@media screen and (max-width: 900px) {
-  .navbar {
-    margin-left: 1rem;
+@media screen and (max-width: 1200px) {
+  .brand-name {
+    font-size: 28px;
   }
+
+  .nav-img {
+    /* left: 50px; */
+    height: 24px;
+    width: 24px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  /* .navbar {
+    margin-left: 1rem;
+  } */
 
   /* .toggle-nav-icon {
     grid-column: 3 / 4;
