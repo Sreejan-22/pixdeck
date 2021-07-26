@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import "./ImageContainer.css";
 import { fetchImages, searchImages } from "../../api/api";
+import Modal from "../Modal/Modal";
 
 const ImageContainer = ({ query }) => {
   const [images, setImages] = useState([]);
+  const [selectedURL, setSelectedURL] = useState(null);
   const didMount = useRef(false);
   const pages = useRef(1);
 
@@ -18,7 +20,7 @@ const ImageContainer = ({ query }) => {
       const { scrollTop, scrollHeight, clientHeight } =
         document.documentElement;
       if (scrollTop + clientHeight >= scrollHeight - 1) {
-        console.log("reached the bottom");
+        // console.log("reached the bottom");
         pages.current = pages.current + 1;
         if (query) {
           searchImages(query, pages.current).then((res) => {
@@ -62,10 +64,22 @@ const ImageContainer = ({ query }) => {
         images.map((image) => {
           return (
             <div className="grid-image-wrapper" key={image.id}>
-              <img src={image.urls.small} alt="" className="grid-img" />
+              <img
+                src={image.urls.small}
+                alt=""
+                className="grid-img"
+                onClick={() => {
+                  if (window.screen.width >= 768) {
+                    setSelectedURL(image.urls.small);
+                  }
+                }}
+              />
             </div>
           );
         })}
+      {selectedURL && (
+        <Modal url={selectedURL} setSelectedURL={setSelectedURL} />
+      )}
     </div>
   );
 };
