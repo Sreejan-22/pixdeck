@@ -11,11 +11,17 @@
   height: 100%;
   width: 100%;
   cursor: pointer;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
-/* .grid-img:hover {
-
-} */
+.grid-img:hover {
+  opacity: 0.7;
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
 
 @media screen and (max-width: 1200px) {
   .image-container {
