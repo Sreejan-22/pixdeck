@@ -30,10 +30,10 @@ const Navbar = ({ setQuery }) => {
           onChange={(e) => debounceSearch(e)}
         />
       </div>
-      <div className="nav-last-div">
+      {/* <div className="nav-last-div">
         <button className="add-photo-btn">Add a photo</button>
         <i className="eos-icons toggle-nav-icon">menu</i>
-      </div>
+      </div> */}
     </nav>
   );
 };

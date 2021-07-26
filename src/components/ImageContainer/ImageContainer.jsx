@@ -5,15 +5,50 @@ import { fetchImages, searchImages } from "../../api/api";
 const ImageContainer = ({ query }) => {
   const [images, setImages] = useState([]);
   const didMount = useRef(false);
+  const pages = useRef(1);
+
   useEffect(() => {
-    fetchImages().then((res) => {
+    fetchImages(pages.current).then((res) => {
       setImages(res);
     });
   }, []);
 
   useEffect(() => {
+    function handleScroll() {
+      const { scrollTop, scrollHeight, clientHeight } =
+        document.documentElement;
+      if (scrollTop + clientHeight >= scrollHeight - 1) {
+        console.log("reached the bottom");
+        pages.current = pages.current + 1;
+        if (query) {
+          searchImages(query, pages.current).then((res) => {
+            setImages((images) => [...images, ...res]);
+          });
+        } else {
+          fetchImages(pages.current).then((res) => {
+            setImages((images) => [...images, ...res]);
+          });
+        }
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll, {
+        passive: true,
+      });
+    };
+  }, []);
+
+  // the didMount ref variable has been used to ensure that the follwoing effect occurs only on update and
+  // not on mount
+  useEffect(() => {
     if (didMount.current) {
-      searchImages(query).then((res) => {
+      pages.current = 1;
+      searchImages(query, pages.current).then((res) => {
         setImages(res);
       });
     } else {
