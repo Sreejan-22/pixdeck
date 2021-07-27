@@ -13,3 +13,4 @@ API used to fetch photos - Unsplash API
 - Explore photos
 - Search photos(debounce search has been implemented)
 - Infinite scroll
+- Photo Modal appears on clicking a photo
