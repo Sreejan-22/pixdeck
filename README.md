@@ -2,7 +2,7 @@
 
 Pixdeck is a one stop photo search application to find your favorite photos
 
-The application is live here: https://Sreejan-22.github.io/pixdeck
+The application is live here - https://Sreejan-22.github.io/pixdeck
 
 Tech Stack - HTML, CSS, Javascript, React.js
 
