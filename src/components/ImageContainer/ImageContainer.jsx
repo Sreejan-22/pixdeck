@@ -83,16 +83,13 @@ const ImageContainer = ({ query }) => {
           );
         })}
       {loading && (
-        <div
-          style={{
-            width: "100vw",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Loader type="Oval" color="#3f3f3f" height={50} width={50} />
-        </div>
+        <Loader
+          type="Oval"
+          color="#3f3f3f"
+          height={50}
+          width={50}
+          style={{ gridColumn: "1 / 5", justifySelf: "center" }}
+        />
       )}
       {selectedURL && (
         <Modal url={selectedURL} setSelectedURL={setSelectedURL} />

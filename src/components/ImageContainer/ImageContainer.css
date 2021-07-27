@@ -23,6 +23,14 @@
   transform: scale(1.05); */
 }
 
+/* .loader-wrapper > svg {
+  position: relative;
+  left: 40%;
+} */
+/* .loader-wrapper {
+
+} */
+
 @media screen and (max-width: 1200px) {
   .image-container {
     grid-template-columns: repeat(3, 1fr);
