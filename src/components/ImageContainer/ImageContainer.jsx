@@ -2,10 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import "./ImageContainer.css";
 import { fetchImages, searchImages } from "../../api/api";
 import Modal from "../Modal/Modal";
+import Loader from "react-loader-spinner";
 
 const ImageContainer = ({ query }) => {
   const [images, setImages] = useState([]);
   const [selectedURL, setSelectedURL] = useState(null);
+  const [loading, setLoading] = useState(false);
   const didMount = useRef(false);
   const pages = useRef(1);
 
@@ -21,14 +23,17 @@ const ImageContainer = ({ query }) => {
         document.documentElement;
       if (scrollTop + clientHeight >= scrollHeight - 1) {
         // console.log("reached the bottom");
+        setLoading(true);
         pages.current = pages.current + 1;
         if (query) {
           searchImages(query, pages.current).then((res) => {
             setImages((images) => [...images, ...res]);
+            setLoading(false);
           });
         } else {
           fetchImages(pages.current).then((res) => {
             setImages((images) => [...images, ...res]);
+            setLoading(false);
           });
         }
       }
@@ -77,6 +82,18 @@ const ImageContainer = ({ query }) => {
             </div>
           );
         })}
+      {loading && (
+        <div
+          style={{
+            width: "100vw",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Loader type="Oval" color="#3f3f3f" height={50} width={50} />
+        </div>
+      )}
       {selectedURL && (
         <Modal url={selectedURL} setSelectedURL={setSelectedURL} />
       )}
