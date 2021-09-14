@@ -12,9 +12,13 @@ const ImageContainer = ({ query }) => {
   const pages = useRef(1);
 
   useEffect(() => {
-    fetchImages(pages.current).then((res) => {
-      setImages(res);
-    });
+    setLoading(true);
+    fetchImages(pages.current)
+      .then((res) => {
+        setImages(res);
+        setLoading(false);
+      })
+      .catch((err) => alert("There seems to be an error!!"));
   }, []);
 
   useEffect(() => {
