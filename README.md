@@ -2,6 +2,8 @@
 
 Pixdeck is a one stop photo search application to find your favorite photos
 
+View it live [here](https://pixdeck.netlify.app/)
+
 Tech Stack - HTML, CSS, Javascript, React.js
 
 API used to fetch photos - Unsplash API
