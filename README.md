@@ -2,8 +2,6 @@
 
 Pixdeck is a one stop photo search application to find your favorite photos
 
-The application is live here - https://Sreejan-22.github.io/pixdeck
-
 Tech Stack - HTML, CSS, Javascript, React.js
 
 API used to fetch photos - Unsplash API
@@ -14,3 +12,7 @@ API used to fetch photos - Unsplash API
 - Search photos(debounce search has been implemented)
 - Infinite scroll
 - Photo Modal appears on clicking a photo
+
+![screenshot 1](https://github.com/Sreejan-22/pixdeck/blob/master/screenshots/sampleproject.png)
+
+![screenshot 2](https://github.com/Sreejan-22/pixdeck/blob/master/screenshots/sampleproject2.png)
