@@ -52,6 +52,8 @@ const ImageContainer = ({ query }) => {
         passive: true,
       });
     };
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // the didMount ref variable has been used to ensure that the follwoing effect occurs only on update and
