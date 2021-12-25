@@ -4,17 +4,19 @@ Pixdeck is a one stop photo search application to find your favorite photos
 
 View it live [here](https://pixdeck.netlify.app/)
 
-Tech Stack - HTML, CSS, Javascript, React.js
+![screenshot 1](https://github.com/Sreejan-22/pixdeck/blob/master/screenshots/sampleproject.png)
 
-API used to fetch photos - Unsplash API
+![screenshot 2](https://github.com/Sreejan-22/pixdeck/blob/master/screenshots/sampleproject2.png)
 
-## Features
+### Features
 
 - Explore photos
 - Search photos(debounce search has been implemented)
 - Infinite scroll
 - Photo Modal appears on clicking a photo
 
-![screenshot 1](https://github.com/Sreejan-22/pixdeck/blob/master/screenshots/sampleproject.png)
+**Tech Stack** - React, CSS, Unsplash API
 
-![screenshot 2](https://github.com/Sreejan-22/pixdeck/blob/master/screenshots/sampleproject2.png)
+### Contact
+
+Connect with me on [Twitter](https://twitter.com/sreejan_ch) or [LinkedIn](https://linkedin.com/in/sreejanchaudhury)
